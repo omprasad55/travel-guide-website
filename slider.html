@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="slider.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="brand">Travel</a>
+        <div class="menu-btn">
+
+        </div>
+        <div class="navigation">
+            <div class="navigation-items"> 
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Gallery</a>
+                <a href="#">Explore</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+    <section class="home">
+        <video class="video-slide active" src="3094026-hd_1920_1080_30fps.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="3057646-hd_1920_1080_24fps.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="3018533-hd_1920_1080_24fps.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="3327031-hd_1920_1080_24fps.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="5692315-hd_1920_1080_30fps.mp4" autoplay muted loop></video>
+        <div class="content">
+            <h1>Wonderful <br><span>island</span></h1>
+            <p>
+                Welcome to your ultimate island escape! Nestled in the heart of the azure seas, our island is a paradise
+                where pristine beaches meet lush tropical forests. Whether you're seeking relaxation on soft sandy
+                shores, adventures through vibrant coral reefs, or the serene beauty of untouched nature, this island
+                offers it all. Discover hidden coves, savor fresh local cuisine, and immerse yourself in the warm
+                hospitality of the island's charming communities. Your journey here will be a perfect blend of
+                tranquility and excitement, making memories that last a lifetime.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="media-icons">
+            <a href="https://www.facebook.com/omm.prasaad"><i class='bx bxl-meta'></i></a>
+            <a href="https://www.instagram.com/_._._0mm_._._/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://x.com/home"><i class='bx bxl-twitter'></i></a>
+        </div>
+        <div class="slider-nav">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+        
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+
+        //javascript for video slider
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+
+        var sliderNav =function(manual){
+
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            })
+
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            })
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            
+        }
+
+        btns.forEach((btn, i) => { 
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            })
+        })
+
+    </script>
+</body>
+
+</html>
